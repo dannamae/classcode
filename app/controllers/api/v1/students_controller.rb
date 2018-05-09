@@ -8,13 +8,13 @@ module Api
 
       def show
         student = Student.find(params[:id])
-        render json: {status: 'SUCCESS', message:'LOADED PROFILE', data:student},status: :ok
+        render json:{status: 'SUCCESS', message:'LOADED PROFILE', data:student},status: :ok
       end
 
       def create
         student = Student.new(student_params)
 
-        if create.save
+        if student.save
           render json: {status: 'SUCCESS', message:'PROFILE SAVED', data:student},status: :ok
         else
           render json: {status: 'ERROR', message:'PROFILE NOT SAVED', data:student.errors},status: :unprocessable_entity
@@ -28,8 +28,8 @@ module Api
       end
 
       def update
-        student= Student.find(params[:id])
-        if student.update_attributes(login_params)
+        student = Student.find(params[:id])
+        if student.update_attributes(student_params)
           render json: {status: 'SUCCESS', message:'PROFILE UPDATED', data:student},status: :ok
         else
           render json: {status: 'ERROR', message:'PROFILE NOT UPDATED', data:student.errors},status: :unprocessable_entity
@@ -39,7 +39,7 @@ module Api
       private
 
       def student_params
-        params.permit(:studentnum, :firstname, :middlename, :lastname, :sectionname, :username, :password)
+        params.permit(:studentnum, :firstname, :middlename, :lastname, :sectionname, :password)
       end
     end
   end
