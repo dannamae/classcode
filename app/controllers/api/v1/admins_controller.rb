@@ -13,7 +13,7 @@ module Api
 
       def create
         admin = Admin.new(admin_params)
-
+        p params
         if admin.save
           render json: {status: 'SUCCESS', message:'PROFILE SAVED', data:admin},status: :ok
         else
