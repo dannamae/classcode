@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 2018_05_08_050412) do
     t.string "middlename"
     t.string "lastname"
     t.string "sectionname"
-    t.string "username"
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
