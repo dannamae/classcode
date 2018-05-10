@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace 'api' do
     namespace 'v1' do
       resources :admins
-      resources :students
+      resources :users
       resources :attendances
       resources :sections
 
