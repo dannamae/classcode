@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2018_05_08_050412) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "studentnum"
     t.string "firstname"
     t.string "middlename"
