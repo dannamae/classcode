@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<style>
+body{
+  background-color: #FFFACD;
+}
+
+aside{
+  margin-left: 900px;
+  margin-top: -400px;
+  width:350px;
+  height:500px;
+  background-color:light green;
+  border-radius: 5px;
+  box-shadow:2px 5px 5px;
+  text-align:center;
+  padding:10px;
+  border: 2px black solid;
+  background-color:  	#FFF0F5;
+}
+#contain {
+	border-radius: 0px;
+	margin-top: 20px;
+  margin-left: 15px;
+  text-align: center;
+	font-size:15pt;
+	color: black;
+	width: 15px;
+	box-shadow: 2px 2px #888888;
+}
+
+
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+	width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity:1;
+}
+
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+.modal {
+	  margin:auto;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;/* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color:black;
+    opacity: 0.9;
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+
+</style>
+  <title>Class Code</title>
+  <%=image_tag("logoo.jpg",:size => "600x500")%>
+<body>
+
+  <aside>
+    <h1> Welcome to Class Code</h1>
+
+    <form>
+        <fieldset id="contain">
+        <legend>LOG IN</legend>
+        <p>
+        Username:<br><input type="text" name="subj" size="40" maxlengeth="25" name="username" required />
+        </p>
+
+        <p>
+        Password:<input type="password" name="password" size="40" name="password" required />
+        </p>
+        <a href="login"><button type="button">Log IN</button></a>
+
+      </fieldset>
+     </form>
+
+      <br><br><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Create an Account</button>
+
+      <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content" action="/action_page.php">
+          <div class="container">
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <label for="firstname"><b>First Name:</b></label> <br>
+            <input type="text" placeholder="Enter first name" name="firstname" required><br><br>
+            <label for="middlenamename"><b>Middle Name:</b></label> <br>
+            <input type="text" placeholder="Enter middle name" name="middlename" required><br><br>
+            <label for="lastname"><b>Last Name:</b></label> <br>
+            <input type="text" placeholder="Enter last name" name="lastname" required> <br><br>
+            <label for="subject"><b>Subject:</b></label> <br>
+            <input type="text" placeholder="Enter subject" name="subject" required> <br><br>
+            <label for="classes"><b>Class section:</b></label> <br>
+            <input type="text" placeholder="Enter section name" name="sectionname" required> <br><br>
+            <label for="classes"><b>Username:</b></label> <br>
+            <input type="text" placeholder="Enter username" name="username" required> <br><br>
+            <label for="password"><b>Password:</b></label> <br>
+            <input type="password" placeholder="Enter password" name="password" required> <br><br>
+            <hr>
+
+
+            <label>
+              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+            <div class="clearfix">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <button type="submit" class="signupbtn" name="signupbtn"></button><%= submit_tag 'signupbtn' %></div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+      </script>
+
+
+  </aside>
+
+
+  </body>
+</html>
