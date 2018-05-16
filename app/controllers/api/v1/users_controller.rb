@@ -1,6 +1,10 @@
 module Api
   module V1
     class UsersController < ApplicationController
+
+      before_action :authenticate_user!, only: :update
+      before_action :authorize_self, only: :update
+
       def index
         users = User.order('created_at DESC');
         render json: {status: 'SUCCESS', message:'SIGNED UP', data:users},status: :ok
@@ -17,7 +21,7 @@ module Api
         if user.save
           render json: {status: 'SUCCESS', message:'PROFILE SAVED', data:user},status: :ok
         else
-          render json: {status: 'ERROR', message:'PROFILE NOT SAVED', data:user.errors},status: :unprocessable_entity
+          render json: {status: 'ERROR', message:'PROFILE NOT SAVED', data:user.errors},status: :bad_request
         end
       end
 
@@ -41,6 +45,9 @@ module Api
       def user_params
         params.permit(:studentnum, :firstname, :middlename, :lastname, :sectionname, :password)
       end
+
+
+
     end
   end
 end
