@@ -1,0 +1,52 @@
+<body>
+    <title>Class Code</title>
+  <center>
+  <center><p>REGISTERED PROFESSOR</p></center>
+  <table>
+  <tr>
+    <th>First Name</th>
+    <th>Middle Name</th>
+    <th>Last Name</th>
+    <th>Subject</th>
+    <th>Classes</th>
+  </tr>
+  <% @admins = Admin.all %>
+  <% @admins.each do |admin| %>
+
+  <tr>
+      <td> <%=admin.firstname %> </td>
+      <td> <%=admin.middlename %> </td>
+      <td><%=admin.lastname %> </td>
+      <td><%=admin.subject %> </td>
+      <td><%=admin.classes %> </td>
+  </tr>
+  <% end %>
+  </table>
+</center>
+
+  <style>
+  body{
+    background-color: #FFFACD;
+    margin: auto;
+  }
+    table{
+    width: 85%;
+    padding: 3%;
+    border: 1px solid black;
+    margin-left:2%;
+    height: inherit;
+  }
+  th{
+    font-size: 15pt;
+    text-align: left;
+    border: 1px solid black;
+  }
+  td{
+      border: 1px solid black;
+  }
+  p{
+    margin-top: 5%;
+    font-size: 30pt;
+  }
+  </style>
+</body>
