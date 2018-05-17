@@ -16,7 +16,8 @@
         <br>
         Username:<br><input type="text" name="subj" size="40" maxlengeth="25" name="username" required />  <br>  <br>
         Password:<input type="password" name="password" size="40" name="password" required />  <br><br>
-        <%= link_to '<button type="button">LOGIN</button>'.html_safe, welcome_new_path %>  <br>
+        <%= link_to '<button type="button">PROF LOGIN</button>'.html_safe, welcome_new_path %>  <br>
+          <%= link_to '<button type="button">ADMIN LOGIN</button>'.html_safe, welcome_admin_path %>
 
     </div>
      </form>
@@ -56,6 +57,7 @@
             <div class="clearfix">
               <%= link_to '<button type="button">SIGN UP</button>'.html_safe, welcome_homepage_path %>
 
+
             </div>
           </div>
         </form>
@@ -86,7 +88,7 @@ body{
 
 aside{
   margin-left: 65%;
-  margin-top: -28%;
+  margin-top: -31%;
   width: 25%;
   height:30%;
   background-color:light green;
