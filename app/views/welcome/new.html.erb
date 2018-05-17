@@ -1,20 +1,52 @@
 <body>
-  <h1> Welcome to Class Code</h1>
+    <title>Class Code</title>
   <center>
+  <center><p>REGISTERED STUDENTS</p></center>
+  <table>
+  <tr>
+    <th>Student Number</th>
+    <th>First Name</th>
+    <th>Middle Name</th>
+    <th>Last Name</th>
+    <th>Section Name</th>
+  </tr>
+  <% @users = User.all %>
+  <% @users.each do |user| %>
 
-  </center>
+  <tr>
+      <td> <%=user.studentnum %> </td>
+      <td> <%=user.firstname %> </td>
+      <td><%=user.middlename %> </td>
+      <td><%=user.lastname %> </td>
+      <td><%=user.sectionname %> </td>
+  </tr>
+  <% end %>
+  </table>
+</center>
 
   <style>
   body{
     background-color: #FFFACD;
     margin: auto;
   }
-  center{
+    table{
     width: 85%;
-    padding: 5%;
+    padding: 3%;
     border: 1px solid black;
     margin-left:2%;
     height: inherit;
+  }
+  th{
+    font-size: 15pt;
+    text-align: left;
+    border: 1px solid black;
+  }
+  td{
+      border: 1px solid black;
+  }
+  p{
+    margin-top: 5%;
+    font-size: 30pt;
   }
   </style>
 </body>
