@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'welcome/homepage'
   get 'welcome/new'
+  get 'welcome/admin'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :homepage
   resources :new
+
 
   post 'session', to: 'session#create', as: 'login'
   delete 'session', to: 'session#destroy', as: 'logout'
