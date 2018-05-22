@@ -24,10 +24,25 @@
   </table>
 </center>
 
+<center>
+<%= link_to '<button type="button">Add</button>'.html_safe, welcome_add_path %>&nbsp;
+<%= link_to '<button type="button">Back</button>'.html_safe, welcome_homepage_path %>
+</center>
+
   <style>
   body{
     background-color: #FFFACD;
     margin: auto;
+  }
+  button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1% 3%;
+      margin: 2% 0;
+      border: none;
+      cursor: pointer;
+      width: 15%;
+      opacity: 0.9;z
   }
     table{
     width: 85%;
