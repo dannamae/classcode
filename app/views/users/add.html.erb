@@ -1,0 +1,69 @@
+<body>
+
+    <title>Class Code</title>
+
+  <center><b>ADD STUDENT</b></center>
+  <div class="container"
+  <form accept-charset="UTF-8" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <label for="studentnum">Student Number:</label><br>
+  <input id="studentnum" size="50" name="studentnum" type="text" /><br>
+  <label for="firstname">First Name:</label><br>
+  <input id="firstname" size="50" name="firstname" type="text" /><br>
+  <label for="middlename">Middle Name:</label><br>
+  <input id="middlename" size="50" name="middlename" type="text" /><br>
+  <label for="lastname">Last Name:</label><br>
+  <input id="lastname" size="50" name="lastname" type="text" /><br>
+  <label for="sectionname">Section Name:</label><br>
+  <input id="sectionname" size="50" name="sectionname" type="text" /><br>
+
+
+
+  <%= link_to '<button type="button">Add</button>'.html_safe,users_index_path %>  <br>
+  </form>
+</div>
+
+
+  <style>
+  body{
+    background-color: #FFFACD;
+    margin: auto;
+  }
+  center{
+    font-size: 25pt;
+    margin-top: 3%
+  }
+  button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 3% 3%;
+      margin: 2% 0;
+      border: none;
+      cursor: pointer;
+      width: 30%;
+      opacity: 0.9;z
+  }
+  .container{
+    margin-left: 35%;
+    margin-top: 7%;
+    width: 25%;
+    height:30%;
+    background-color:light green;
+    box-shadow:2% 5% 5%;
+    text-align:center;
+    padding:5%;
+    border: 2px black solid;
+    background-color:  	#FFF0F5;
+  }
+  input[type=text]:focus {
+      background-color: #ddd;
+      outline: none;
+  	   width: auto;
+      padding: 2%;
+      margin:auto;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+  }
+  </style>
+</body>
