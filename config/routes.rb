@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/homepage'
+  get 'users/homepage', to: 'sessions#new'
+  post 'users/homepage', to: 'sessions#create'
   get 'users/index'
+  post 'users/index'
   get 'users/admin'
   get 'users/edit'
   get 'users/add'
@@ -11,17 +13,13 @@ Rails.application.routes.draw do
   namespace 'api' do
     namespace 'v1' do
       resources :admins
-      resources :users
-      resources :attendances
       resources :sections
-    end
+      resources :users
+
+      end
   end
 
-  resources :homepage
-  resources :index
-  resources :admin
-  resources :add
-
+  resources :sessions
 
   post 'session', to: 'session#create', as: 'login'
   delete 'session', to: 'session#destroy', as: 'logout'
