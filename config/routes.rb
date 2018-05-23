@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'users/admin'
   get 'users/edit'
   get 'users/add'
+  post 'users/add',  to: 'users#create'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
