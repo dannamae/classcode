@@ -1,4 +1,4 @@
-class Api::V1::SessionController < ApplicationController
+wwwwwwwwclass Api::V1::SessionController < ApplicationController
  # skip_before_action :require_login, only: [:create], raise: :false
 
  # def current_user
