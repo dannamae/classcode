@@ -3,22 +3,45 @@
     <title>Class Code</title>
 
   <center><b>ADD STUDENT</b></center>
-  <div class="container"
-  <form accept-charset="UTF-8" method="post">
-  <input name="utf8" type="hidden" value="&#x2713;" />
-  <label for="studentnum">Student Number:</label><br>
-  <input id="studentnum" size="50" name="studentnum" type="text" /><br>
-  <label for="firstname">First Name:</label><br>
-  <input id="firstname" size="50" name="firstname" type="text" /><br>
-  <label for="middlename">Middle Name:</label><br>
-  <input id="middlename" size="50" name="middlename" type="text" /><br>
-  <label for="lastname">Last Name:</label><br>
-  <input id="lastname" size="50" name="lastname" type="text" /><br>
-  <label for="sectionname">Section Name:</label><br>
-  <input id="sectionname" size="50" name="sectionname" type="text" /><br>
+  <div class="container">
 
-  <br><br><input class="btn btn-primary" name="commit" type="submit"
-        value="Create my account" /><br>
+  <%= form_for(:user ,:authenticity_token => false, url: users_add_path) do |f| %>
+  	<div class="form-group">
+  	<%= f.label :studentnum %><br>
+  	<%= f.text_field :studentnum, class: 'form-control col-xl-10 col-sm-6 mb-3' %>
+  	</div>
+
+  	<div class="form-group">
+  		<%= f.label :firstname %><br>
+  		<%= f.text_field :firstname,:cols => 30, :rows => 2 , style: 'resize:none;', class: 'form-control col-xl-10 col-sm-6 mb-3' %>
+  	</div>
+
+  	<div class="form-group">
+  	<%= f.label :middlename %><br>
+  	<%= f.text_field :middlename, class: 'form-control col-xl-10 col-sm-6 mb-3' %>
+  	</div>
+
+    <div class="form-group">
+  	<%= f.label :lastname %><br>
+  	<%= f.text_field :lastname, class: 'form-control col-xl-10 col-sm-6 mb-3' %>
+  	</div>
+
+    <div class="form-group">
+  	<%= f.label :sectionname %><br>
+  	<%= f.text_field :sectionname, class: 'form-control col-xl-10 col-sm-6 mb-3' %>
+  	</div>
+
+    <div class="form-group">
+  	<%= f.label :password %><br>
+  	<%= f.password_field :password, class: 'form-control col-xl-10 col-sm-6 mb-3' %>
+  	</div>
+
+
+
+
+  		<br><br><%= f.submit "Sign up", class: "col-xl-6 col-sm-6 mb-3 btn btn-primary btn-block mt-2 mx-2" %>
+  		<% end %>
+
 
 
   </form>
@@ -46,9 +69,9 @@
   }
   .container{
     margin-left: 35%;
-    margin-top: 7%;
+    margin-top: 5%;
     width: 25%;
-    height:30%;
+    height:40%;
     background-color:light green;
     box-shadow:2% 5% 5%;
     text-align:center;
