@@ -24,8 +24,13 @@ ActiveRecord::Schema.define(version: 2018_05_10_005029) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "studentnum"
+    t.string "firstname"
+    t.string "middlename"
+    t.string "lastname"
     t.string "sectionname"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
