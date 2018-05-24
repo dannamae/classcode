@@ -1,15 +1,12 @@
 class SessionsController < ApplicationController
 
-  def new
-  end
-
   def create
-      if params[:users][:username] == 'admin' && params[:users][:password] == 'passwordadmin'
+      if params[:users][:username] == 'admin' && params[:users][:password] == 'admin'
           session[:name] = session[:username]
           redirect_to users_index_path
       else
           render 'new'
-      end
+      end 
   end
 
   def destroy
