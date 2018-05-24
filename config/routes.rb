@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'users/index'
   get 'users/admin'
   get 'users/edit'
+  post 'users/edit', to: 'users#update'
   get 'users/add'
   post 'users/add',  to: 'users#create'
 
@@ -14,16 +15,16 @@ Rails.application.routes.draw do
   namespace 'api' do
     namespace 'v1' do
       resources :admins
-      resources :sections
+      resources :students
       resources :users
+      resources :session
+
+
+      post 'session', to: 'session#create', as: 'login'
+      delete 'session', to: 'session#destroy', as: 'logout'
 
       end
   end
-
-  resources :sessions
-
-  post 'session', to: 'session#create', as: 'login'
-  delete 'session', to: 'session#destroy', as: 'logout'
 
 
 end
