@@ -13,4 +13,10 @@ class ApplicationController < ActionController::API
      end
    end
 
+   def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:add) { |u| u.permit(:studentnum, :firstname,:middlename, :lastname,:sectionname, :password) }
+    devise_parameter_sanitizer.for(:edit) { |u| u.permit(:studentnum, :firstname,:middlename, :lastname,:sectionname, :password) }
+    end
+
+
  end
